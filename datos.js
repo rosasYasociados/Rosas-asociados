@@ -52,11 +52,11 @@ const CONFIG = {
 // ---------------------------------------------------------------------
 const CLIENTES = [
 
-  {
-    nombre: "Sales y Químicos de la Baja",
-    servicio: "Delimitación de áreas críticas mediante pintura amarilla, roja y blanca.",
-    fecha: "Septiembre 2026",
-    foto: "quimicas.jpeg"
+//  {
+//    nombre: "Sales y Químicos de la Baja",
+//    servicio: "Delimitación de áreas críticas mediante pintura amarilla, roja y blanca.",
+//    fecha: "Septiembre 2026",
+//    foto: "quimicas.jpeg"
     // Para activar el detalle, agrega una coma después de la foto y quita los //:
     // descripcion: "Escribe aquí el detalle del servicio.",
     // archivo: "nombre-del-archivo.pdf"
