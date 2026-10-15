@@ -39,10 +39,10 @@ const CONFIG = {
 // ---------------------------------------------------------------------
 const CLIENTES = [
   {
-    nombre: "Transportes del Norte",
-    servicio: "Diagnóstico de brechas de cumplimiento",
-    fecha: "2026-03",
-    foto: "transportes.jpg"
+    nombre: " Sales y Químicos de la Baja",
+    servicio: "Delimitación de áreas críticas mediante pintura amarilla, roja y blanca.",
+    fecha: " Septiembre 2026",
+    foto: "quimicas.jpg"
   },
   // Agrega aquí tus clientes:
 
