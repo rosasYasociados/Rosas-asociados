@@ -38,6 +38,12 @@ const CONFIG = {
 //  IMPORTANTE: pide permiso al cliente antes de publicar su nombre o foto.
 // ---------------------------------------------------------------------
 const CLIENTES = [
+  {
+    nombre: "Transportes del Norte",
+    servicio: "Diagnóstico de brechas de cumplimiento",
+    fecha: "2026-03",
+    foto: "transportes.jpg"
+  },
   // Agrega aquí tus clientes:
 
 ];
