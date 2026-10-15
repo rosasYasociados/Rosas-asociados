@@ -53,17 +53,16 @@ const CONFIG = {
 const CLIENTES = [
 
    {
-    nombre: "Sales y Químicos de la Baja",
+    nombre: "Industria manufacturera",
     servicio: "Sin definir",
     fecha: "Septiembre 2026",
     foto: "IMG_0568.jpeg",
-    descripcion: `Delimitación de áreas críticas mediante pintura amarilla, roja y blanca.
-
-Patio de maniobras: líneas amarillas y blancas para tránsito seguro de montacargas y tráileres.
-Zona de carga: delimitación con líneas rojas y amarillas para operaciones de carga y descarga.
-Áreas de riesgo: señalización con franjas rojas y amarillas/negro para advertir peligros inmediatos.
-Rutas peatonales: diferenciadas con pintura blanca para circulación segura del personal.`,  
-    archivo: "NOM 026 STPS.pdf"
+    descripcion: `Contexto
+Con el propósito de garantizar la seguridad operativa y cumplir con la
+NOM-026-STPS, se ha diseñado una propuesta de señalización para el patio de
+maniobras y carga. Este avance se presenta como parte del proyecto de mejora
+continua en seguridad industrial y protección civil.`,  
+    archivo: "No hay archivo disponible"
   },
 
 
