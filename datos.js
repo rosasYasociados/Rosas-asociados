@@ -56,7 +56,7 @@ const CLIENTES = [
     nombre: "Sales y Químicos de la Baja",
     servicio: "Delimitación de áreas críticas mediante pintura amarilla, roja y blanca.",
     fecha: "Septiembre 2026",
-    foto: "quimicas.jpeg",
+    foto: "IMG_0568.jpeg",
     descripcion: `Delimitación de áreas críticas mediante pintura amarilla, roja y blanca.
 
 Patio de maniobras: líneas amarillas y blancas para tránsito seguro de montacargas y tráileres.
