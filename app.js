@@ -38,6 +38,32 @@
   var cfg = typeof CONFIG !== "undefined" ? CONFIG : { empresa: "Rosas & Asociados", whatsapp: "526151127516" };
 
   /* ---------- página Clientes ---------- */
+  function nombreArchivo(ruta) {
+    var p = String(ruta).split("?")[0].split("#")[0].split("/").pop();
+    try { p = decodeURIComponent(p); } catch (e) {}
+    return p || String(ruta);
+  }
+  function extension(ruta) {
+    var n = nombreArchivo(ruta);
+    var i = n.lastIndexOf(".");
+    return i > -1 ? n.slice(i + 1).toUpperCase().slice(0, 5) : "ARCHIVO";
+  }
+  function foto(c, clase) {
+    var wrap = el("div", clase);
+    var ini = el("div", "ini", iniciales(c.nombre));
+    ini.setAttribute("aria-hidden", "true");
+    if (c.foto) {
+      var img = new Image();
+      img.alt = "Foto de " + c.nombre;
+      img.onerror = function () { img.remove(); wrap.appendChild(ini); };
+      img.src = c.foto;
+      wrap.appendChild(img);
+    } else {
+      wrap.appendChild(ini);
+    }
+    return wrap;
+  }
+
   function paginaClientes() {
     var box = document.getElementById("lista");
     var lista = datosClientes.filter(function (c) { return c && c.nombre; });
@@ -45,21 +71,70 @@
       box.appendChild(vacio("Próximamente", "Muy pronto compartiremos aquí a las empresas con las que hemos trabajado."));
       return;
     }
+
+    var dlg = document.getElementById("det");
+    var cuerpo = document.getElementById("det-body");
+
+    function cerrar() {
+      if (typeof dlg.close === "function") dlg.close(); else dlg.removeAttribute("open");
+    }
+
+    function abrirDetalle(c) {
+      cuerpo.textContent = "";
+      var m = foto(c, "media");
+      m.querySelector("img") && (m.querySelector("img").loading = "eager");
+      cuerpo.appendChild(m);
+
+      var cont = el("div", "content");
+      var h = el("h2", "", c.nombre);
+      h.id = "det-t";
+      cont.appendChild(h);
+      if (c.servicio) cont.appendChild(el("span", "tag", c.servicio));
+      if (c.fecha) {
+        var t = el("time", "", fecha(c.fecha));
+        t.setAttribute("datetime", String(c.fecha));
+        cont.appendChild(t);
+      }
+      if (c.descripcion) cont.appendChild(el("p", "desc", c.descripcion));
+
+      var archivos = [].concat(c.archivo || []).filter(Boolean);
+      if (archivos.length) {
+        var fs = el("div", "files");
+        fs.appendChild(el("h3", "", "Archivo del servicio"));
+        archivos.forEach(function (ruta) {
+          var a = el("a", "file");
+          a.href = ruta;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.appendChild(el("span", "ext", extension(ruta)));
+          a.appendChild(el("span", "nm", nombreArchivo(ruta)));
+          a.appendChild(el("span", "go", "Abrir"));
+          fs.appendChild(a);
+        });
+        cont.appendChild(fs);
+      }
+
+      var acts = el("div", "actions");
+      var bt = el("button", "btn plain", "Cerrar");
+      bt.type = "button";
+      bt.addEventListener("click", cerrar);
+      acts.appendChild(bt);
+      cont.appendChild(acts);
+      cuerpo.appendChild(cont);
+
+      if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+      dlg.scrollTop = 0;
+    }
+
+    document.getElementById("det-x").addEventListener("click", cerrar);
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) cerrar(); });
+
     lista.forEach(function (c) {
       var card = el("article", "cli");
-      var ph = el("div", "ph");
-      var ini = el("div", "ini", iniciales(c.nombre));
-      ini.setAttribute("aria-hidden", "true");
-      if (c.foto) {
-        var img = new Image();
-        img.alt = "Foto de " + c.nombre;
-        img.loading = "lazy";
-        img.onerror = function () { img.remove(); ph.appendChild(ini); };
-        img.src = c.foto;
-        ph.appendChild(img);
-      } else {
-        ph.appendChild(ini);
-      }
+      card.tabIndex = 0;
+      card.setAttribute("role", "button");
+      card.setAttribute("aria-label", "Ver detalles de " + c.nombre);
+      card.appendChild(foto(c, "ph"));
       var body = el("div", "body");
       body.appendChild(el("h3", "", c.nombre));
       if (c.servicio) body.appendChild(el("span", "tag", c.servicio));
@@ -68,8 +143,12 @@
         t.setAttribute("datetime", String(c.fecha));
         body.appendChild(t);
       }
-      card.appendChild(ph);
+      body.appendChild(el("span", "ver", "Ver detalles →"));
       card.appendChild(body);
+      card.addEventListener("click", function () { abrirDetalle(c); });
+      card.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); abrirDetalle(c); }
+      });
       box.appendChild(card);
     });
   }
