@@ -63,7 +63,7 @@ Patio de maniobras: líneas amarillas y blancas para tránsito seguro de montaca
 Zona de carga: delimitación con líneas rojas y amarillas para operaciones de carga y descarga.
 Áreas de riesgo: señalización con franjas rojas y amarillas/negro para advertir peligros inmediatos.
 Rutas peatonales: diferenciadas con pintura blanca para circulación segura del personal.`,  
-    archivo: "nombre-del-archivo.pdf"
+    archivo: "NOM 026 STPS.pdf"
   },
 
 
