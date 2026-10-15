@@ -42,7 +42,7 @@ const CLIENTES = [
     nombre: " Sales y Químicos de la Baja",
     servicio: "Delimitación de áreas críticas mediante pintura amarilla, roja y blanca.",
     fecha: " Septiembre 2026",
-    foto: "quimicas.jpg"
+    foto: "quimicas.jpeg"
   },
   // Agrega aquí tus clientes:
 
