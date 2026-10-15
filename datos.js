@@ -38,6 +38,7 @@ const CONFIG = {
 //  IMPORTANTE: pide permiso al cliente antes de publicar su nombre o foto.
 // ---------------------------------------------------------------------
 const CLIENTES = [
+  
   {
     nombre: "Sales y Químicos de la Baja",
     servicio: "Delimitación de áreas críticas mediante pintura amarilla, roja y blanca.",
