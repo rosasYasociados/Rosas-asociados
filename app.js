@@ -35,7 +35,7 @@
 
   var datosClientes = typeof CLIENTES !== "undefined" && Array.isArray(CLIENTES) ? CLIENTES : [];
   var datosResenas = typeof RESENAS !== "undefined" && Array.isArray(RESENAS) ? RESENAS : [];
-  var cfg = typeof CONFIG !== "undefined" ? CONFIG : { empresa: "Rosas & Asociados", whatsapp: "526151127516" };
+  var cfg = typeof CONFIG !== "undefined" ? CONFIG : { empresa: "Rosas & Asociados", correo: "jimenezisrael19080@gmail.com" };
 
   /* ---------- página Clientes ---------- */
   function nombreArchivo(ruta) {
@@ -236,9 +236,9 @@
         "\nComentario: " + com +
         (nombre ? "\nNombre: " + nombre : "");
       var a = document.createElement("a");
-      a.href = "https://wa.me/" + cfg.whatsapp + "?text=" + encodeURIComponent(msg);
-      a.target = "_blank";
-      a.rel = "noopener";
+      a.href = "mailto:" + (cfg.correo || "jimenezisrael19080@gmail.com") +
+        "?subject=" + encodeURIComponent("Reseña de " + cfg.empresa) +
+        "&body=" + encodeURIComponent(msg);
       document.body.appendChild(a);
       a.click();
       a.remove();
