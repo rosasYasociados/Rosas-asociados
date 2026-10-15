@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reseñas | Rosas &amp; Asociados</title>
+<meta name="description" content="Opiniones y calificaciones de quienes han trabajado con Rosas &amp; Asociados.">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body data-page="resenas">
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><img src="logo.png" alt=""><span>Rosas &amp; Asociados</span></a>
+    <nav aria-label="Principal">
+      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#como">Cómo trabajamos</a>
+      <a href="index.html#nosotros">Nosotros</a>
+      <a href="clientes.html">Clientes</a>
+      <a href="resenas.html" aria-current="page">Reseñas</a>
+      <a class="cta" href="index.html#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="pagehead">
+    <div class="wrap">
+      <h1>Reseñas</h1>
+      <div class="stats">
+        <p class="stat"><span>Calificación promedio</span> <b id="prom">—</b><small id="de10" hidden>/ 10</small></p>
+        <p class="stat"><span>Reseñas:</span> <b id="total">0</b></p>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div id="lista" class="grid" aria-live="polite"></div>
+      <div class="cta-row">
+        <button class="btn main" type="button" id="abrir">Dejar reseña</button>
+        <small>Tu reseña se envía por WhatsApp y aparece aquí una vez revisada.</small>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dialog id="dlg" aria-labelledby="dlg-t">
+  <div class="dlg">
+    <div id="paso1">
+      <h2 id="dlg-t">Dejar reseña</h2>
+      <p class="sub2">Cuéntanos cómo fue tu experiencia con Rosas &amp; Asociados.</p>
+      <form id="form" novalidate>
+        <fieldset>
+          <legend>Calificación (del 1 al 10)</legend>
+          <div class="rate" role="radiogroup">
+            <label><input type="radio" name="cal" value="1"><span>1</span></label>
+            <label><input type="radio" name="cal" value="2"><span>2</span></label>
+            <label><input type="radio" name="cal" value="3"><span>3</span></label>
+            <label><input type="radio" name="cal" value="4"><span>4</span></label>
+            <label><input type="radio" name="cal" value="5"><span>5</span></label>
+            <label><input type="radio" name="cal" value="6"><span>6</span></label>
+            <label><input type="radio" name="cal" value="7"><span>7</span></label>
+            <label><input type="radio" name="cal" value="8"><span>8</span></label>
+            <label><input type="radio" name="cal" value="9"><span>9</span></label>
+            <label><input type="radio" name="cal" value="10"><span>10</span></label>
+          </div>
+          <div class="hint"><span>1 = muy mala</span><span>10 = excelente</span></div>
+        </fieldset>
+
+        <label class="l" for="comentario">Comentario</label>
+        <textarea id="comentario" name="comentario" maxlength="600" placeholder="Escribe tu comentario aquí"></textarea>
+
+        <label class="l" for="nombre">Tu nombre o empresa (opcional)</label>
+        <input type="text" id="nombre" name="nombre" maxlength="60" autocomplete="name">
+
+        <p class="err" id="err" role="alert"></p>
+        <div class="actions">
+          <button type="button" class="btn plain" id="cancelar">Cancelar</button>
+          <button type="submit" class="btn main">Enviar reseña</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="gracias" class="thanks" hidden>
+      <div class="ok" aria-hidden="true">✓</div>
+      <h2>¡Gracias!</h2>
+      <p>Se abrió WhatsApp con tu reseña lista. Solo toca <b>Enviar</b> para terminar. Una vez revisada, aparecerá en esta página.</p>
+      <div class="actions" style="justify-content:center;margin-top:20px">
+        <button type="button" class="btn main" id="cerrar">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<footer>© <span id="y"></span> Rosas &amp; Asociados - Consultoría Industrial y EHS. Todos los derechos reservados.</footer>
+<script src="datos.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
