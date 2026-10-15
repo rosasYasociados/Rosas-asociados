@@ -44,7 +44,6 @@ const CLIENTES = [
     fecha: "Septiembre 2026",
     foto: "quimicas.jpeg"
   },
-  // Agrega aquí tus clientes:
 
 ];
 
