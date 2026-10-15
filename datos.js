@@ -52,20 +52,8 @@ const CONFIG = {
 // ---------------------------------------------------------------------
 const CLIENTES = [
 
-   {
-    nombre: "Industria manufacturera",
-    servicio: "Sin definir",
-    fecha: "Septiembre 2026",
-    foto: "IMG_0568.jpeg",
-    descripcion: `Contexto
-Con el propósito de garantizar la seguridad operativa y cumplir con la
-NOM-026-STPS, se ha diseñado una propuesta de señalización para el patio de
-maniobras y carga. Este avance se presenta como parte del proyecto de mejora
-continua en seguridad industrial y protección civil.`,  
-    archivo: "No hay archivo disponible"
-  },
-
-
+//
+  
 ];
 
 // ---------------------------------------------------------------------
