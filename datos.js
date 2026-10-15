@@ -57,6 +57,15 @@ const CLIENTES = [
     servicio: "Delimitación de áreas críticas mediante pintura amarilla, roja y blanca.",
     fecha: "Septiembre 2026",
     foto: "quimicas.jpeg"
+    descripcion: "Delimitación de áreas críticas mediante pintura amarilla, roja y blanca.
+Patio de maniobras: líneas amarillas y blancas para tránsito seguro de
+montacargas y tráileres.
+Zona de carga: delimitación con líneas rojas y amarillas para operaciones de carga
+y descarga.
+Áreas de riesgo: señalización con franjas rojas y amarillas/negro para advertir
+peligros inmediatos.
+Rutas peatonales: diferenciadas con pintura blanca para circulación segura del personal."
+
     // Para activar el detalle, agrega una coma después de la foto y quita los //:
     // descripcion: "Escribe aquí el detalle del servicio.",
     // archivo: "nombre-del-archivo.pdf"
