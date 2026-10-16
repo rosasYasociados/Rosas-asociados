@@ -13,7 +13,7 @@
 const CONFIG = {
   empresa: "Rosas & Asociados",
   // Número que recibe las reseñas por WhatsApp (país + número, sin signos)
-  whatsapp: "526151127516"
+  correo: "rosasyasociados.ehs@gmail.com"
 };
 
 // ---------------------------------------------------------------------
